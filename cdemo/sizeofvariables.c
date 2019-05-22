@@ -8,8 +8,14 @@ int main()
   printf("int a value: %d and size: %d bytes\n", a, sizeof(a));
 
   unsigned int b = 999;
-  printf("unsigned a value: %d and size: %d bytes\n", b, sizeof(b));
+  printf("unsigned b value: %d and size: %d bytes\n", b, sizeof(b));
 
-  
+  short int c = 999;
+  printf("short c value: %d and size: %d bytes\n", c, sizeof(c));
+
+  long int d = 999;
+  printf("long d value: %d and size: %d bytes\n", d, sizeof(d));
+
+
 }
 
