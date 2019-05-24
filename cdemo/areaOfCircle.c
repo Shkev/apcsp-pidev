@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <math.h>
-#define PI 3.14159265358979323846
 
 float areaOfCircle(float radius)
 {
-  float area = PI * radius * radius;
+  float area = M_PI * radius * radius;
   return area;
 }
 
