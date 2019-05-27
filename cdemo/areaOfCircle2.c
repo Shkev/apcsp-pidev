@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#define TRUE 1
 
 //defining fuctions
 float areaOfCircle(float radius)
