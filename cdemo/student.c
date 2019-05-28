@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#define TRUE 0
+#define FALSE 1
 
 struct Student
 {
@@ -12,7 +14,7 @@ struct Student
 
 void printStudent(struct Student* student)
 {
-  printf("First Name: %s\n", student->fname);
+  printf("\nFirst Name: %s\n", student->fname);
   printf("Last Name: %s\n", student->lname);
   printf("Age: %d\n", student->age);
   printf("Student ID: %d\n", student->sid);
@@ -22,47 +24,46 @@ int main()
 {
   char input[256];
   char ans;
-  struct students[256];
-  int j = 0;
+  struct Student students[256];
+  int j = TRUE;
   int count = 0;
   while (j == 0)
   {
-    printf("Create New Student (y/n)?");
-    fgets(input, 256, stdin);
+    printf("Create New Student (y/n)?  ");
+    fgets(input, 100, stdin);
     sscanf(input, "%s", &ans);
     if (strcmp(&ans, "y") == 0)
     {
-      count++;
-      j = 0;
-      char fname[256];
-      char lname[256];
+      j = TRUE;
+      char fname[100];
+      char lname[100];
       int age;
       int sID;
-      printf("Enter First Name of Student");
-      fgets(input, 256, stdin);
+      printf("Enter First Name of Student:  ");
+      fgets(input, 100, stdin);
       sscanf(input, "%s", fname);
-      printf("Enter Last Name of Student");
-      fgets(input, 256, stdin);
+      printf("Enter Last Name of Student:  ");
+      fgets(input, 100, stdin);
       sscanf(input, "%s", lname);
-      printf("Enter Age of Student");
-      fgets(input, 256, stdin);
+      printf("Enter Age of Student:  ");
+      fgets(input, 100, stdin);
       sscanf(input, "%d", &age);
-      printf("Enter Student ID of Student");
-      fgets(input, 256, stdin);
+      printf("Enter Student ID of Student:  ");
+      fgets(input, 100, stdin);
       sscanf(input, "%d", &sID);
-      struct Student student;
-      strcpy(student.fname, fname);
-      strcpy(student.lname, lname);
-      student.age = age;
-      student.sid = sID;
-      students[count] = student;
+      printf("\n");
+      strcpy(students[count].fname, fname);
+      strcpy(students[count].lname, lname);
+      students[count].age = age;
+      students[count].sid = sID;
+      count++;
     }
     else
     {
-      j = 1;
-      for (int i = 1; i <= count; i++);
+      j = FALSE;
+      for (int i = 0; i < count; i++)
       {
-        printStudent(students[i]);
+        printStudent(&students[i]);
       }
     }
   }
