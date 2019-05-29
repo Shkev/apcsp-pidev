@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
     char arg1, arg2;
     printf("Enter two radii to find the area of the corresponding circles\n");
     fgets(input, 256, stdin);
-    sscanf(input, "%s %s", &arg1, &arg2);
+    sscanf(input, "%s" "%s", &arg1, &arg2);
     argv[0] = &arg1;
     argv[1] = &arg2;
     areaLoop(arg, 2, argv);
