@@ -1,1 +1,4 @@
-//wooch declare your functions here
+//declaring fuctions
+
+void multMatrix();
+
