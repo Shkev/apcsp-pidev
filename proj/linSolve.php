@@ -5,6 +5,7 @@
     <style>
       input {
         width: 5%;
+        value: "0";
       }
     </style>
   </head>

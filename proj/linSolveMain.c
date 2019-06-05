@@ -9,6 +9,7 @@
 int main(int argc, char* argv[])
 {
   float inputMatrix[MAXROW][MAXCOL];
+  float equalsMatrix[MAXROW][1];
   int n = 0;
   int m = 0;
   int r0, r1, r2, r3, c0, c1, c2, c3;
@@ -26,6 +27,11 @@ int main(int argc, char* argv[])
         m++;
       }
       inputMatrix[m][n] = atof(argv[i]);
+      if ((i % 4) == 0)
+      {
+        i++;
+        equalsMatrix[m][1] = atof(argv[i]);
+      }
     }
     n++;
   }
