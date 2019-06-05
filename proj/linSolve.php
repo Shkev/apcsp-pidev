@@ -47,7 +47,7 @@
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       Equation 1: <input type="text" name="arg1"><i>x<sub>1</sub></i> <input type="text" name="arg2"><i>x<sub>2</sub></i> <input type="text" name="arg3"><i>x<sub>3</sub </i> <input type="text" name="arg4"><i>x<sub>4</sub></i>
-      <p> </p>Equation 2: <input type="text" name="arg5"><i>x<sub>1</sub></i> <input type="text" name="arg6"><i>x<sub>2</sub></i> <input type="text" name="arg7"><i>x<sub>3</sub></i> <input type="text" name="arg8"><i>x<sub>4</sub></i>											                        <p> </p>Equation 3: <input type="text" name="arg9"><i>x<sub>1</sub></i> <input type="text" name="arg10"><i>x<sub>2</sub></i> <input type="text" name="arg11"><i>x<sub>3</sub></i> <input type="text" name="arg12"><i>x<sub>4</sub></i>
+      <p> </p>Equation 2: <input type="text" name="arg5"><i>x<sub>1</sub></i> <input type="text" name="arg6"><i>x<sub>2</sub></i> <input type="text" name="arg7"><i>x<sub>3</sub></i> <input type="text" name="arg8"><i>x<sub>4</sub></i>		      <p> </p>Equation 3: <input type="text" name="arg9"><i>x<sub>1</sub></i> <input type="text" name="arg10"><i>x<sub>2</sub></i> <input type="text" name="arg11"><i>x<sub>3</sub></i> <input type="text" name="arg12"><i>x<sub>4</sub></i>
       <p> </p>Equation 4: <input type="text" name="arg13"><i>x<sub>1</sub></i> <input type="text" name="arg14"><i>x<sub>2</sub></i> <input type="text" name="arg15"><i>x<sub>3</sub></i> <input type="text" name="arg16"><i>x<sub>4</sub></i>																					     
       <br>
       <input type="submit" value="Go!">
