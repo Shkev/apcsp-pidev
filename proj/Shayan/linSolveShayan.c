@@ -7,7 +7,7 @@
 #define TRUE   1
 
 //defining functions
-void rmExtra(float* matrix[MAXROW][MAXCOL], int* r0, int* r1, int* r2, int* r3, int* c0, int* c1, int* c2, int* c3)
+void rmExtra(float* matrix[][], int* r0, int* r1, int* r2, int* r3, int* c0, int* c1, int* c2, int* c3)
 {
   int m = 0;
   int n = 0;
@@ -70,7 +70,7 @@ void scaleMatrix(float* inputMatrix[][], float* outputMatrix, float scalar, int 
   }
 }
 
-void invMatrix(float matrix[MAXROW][MAXCOL],int* r1, int* r2, int* r3, int* r4, int* c1, int* c2, int* c3, int* c4 )
+void invMatrix(float matrix[][],int* r1, int* r2, int* r3, int* r4, int* c1, int* c2, int* c3, int* c4 )
 {
   float deter;
   if ((*c3 == FALSE) & (*c2 == FALSE) & (*r3 == FALSE) & (*r2 == FALSE))
@@ -167,8 +167,9 @@ void invMatrix(float matrix[MAXROW][MAXCOL],int* r1, int* r2, int* r3, int* r4, 
         }*/
       }
     }
-    else
+    /*else
     {
+      code for 4 by 4 matrix, not working, update later
       float adj[4][4];
       float invMat[4][4];
       float minor1[3][3], minor2[3][3], minor3[3][3], minor4[3][3];
@@ -179,7 +180,7 @@ void invMatrix(float matrix[MAXROW][MAXCOL],int* r1, int* r2, int* r3, int* r4, 
       i = matrix[2][0]; j = matrix[2][1]; k = matrix[2][2]; l = matrix[2][3];
       m1 = matrix[3][0]; n1 = matrix[3][1]; o = matrix[3][2]; p = matrix[3][3];
       //creating matrix of minors at M_i,j = M_0,0
-      /*minor1[0][0] = f; minor1[0][1] = g; minor1[0][2] = h;
+      minor1[0][0] = f; minor1[0][1] = g; minor1[0][2] = h;
       minor1[1][0] = j; minor1[1][1] = k; minor1[1][2] = l;
       minor1[2][0] = n1; minor1[2][1] = o; minor1[2][2] = p;
       scaleMatrix(minor1, coFact1, 1, 4);
@@ -197,7 +198,7 @@ void invMatrix(float matrix[MAXROW][MAXCOL],int* r1, int* r2, int* r3, int* r4, 
       minor4[0][0] = e; minor4[0][1] = f; minor4[0][2] = g;
       minor4[1][0] = i; minor4[1][1] = j; minor4[1][2] = k;
       minor4[2][0] = m1; minor4[2][1] = n1; minor4[2][2] = o;
-      scaleMatrix(minor4, coFact4, -1, 4);*/
-    }
+      scaleMatrix(minor4, coFact4, -1, 4);
+    }*/
   }
 }
