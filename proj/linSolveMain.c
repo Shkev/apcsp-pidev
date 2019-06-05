@@ -11,6 +11,7 @@ int main(int argc, char* argv[])
   float inputMatrix[MAXROW][MAXCOL];
   int n = 0;
   int m = 0;
+  int r0, r1, r2, r3, c0, c1, c2, c3;
   for (int i = 1; i < argc; i++)
   {
     if (n == 0)
@@ -28,7 +29,5 @@ int main(int argc, char* argv[])
     }
     n++;
   }
-  printf("%f\n", inputMatrix[1][0]);
-  printf("%d\n", argc);
   exit(EXIT_SUCCESS);
 }
