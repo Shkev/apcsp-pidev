@@ -4,8 +4,8 @@
     <title>Linear System Solver</title>
     <style>
       input {
-        width: 5%;
-        value: "0";
+      width: 5%;
+      value: "0";
       }
     </style>
   </head>
