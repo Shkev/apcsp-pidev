@@ -2,4 +2,6 @@
 
 void rmExtra();
 
+void scaleMatrix();
+
 void invMatrix();
