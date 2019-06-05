@@ -11,16 +11,24 @@ int main(int argc, char* argv[])
   float inputMatrix[MAXROW][MAXCOL];
   int n = 0;
   int m = 0;
-  for (int i = 0; argc; i++)
+  for (int i = 1; i < argc; i++)
   {
-    if ((n % MAXCOL) == 0)
+    if (n == 0)
     {
-      n = 0;
-      m++;
+      inputMatrix[m][n] = atof(argv[i]);
     }
-    inputMatrix[m][n] = atof(argv[i]);
+    else
+    {
+      if ((n % MAXCOL) == 0)
+      {
+        n = 0;
+        m++;
+      }
+      inputMatrix[m][n] = atof(argv[i]);
+    }
     n++;
   }
-  printf("%f\n", inputMatrix[1][1]);
+  printf("%f\n", inputMatrix[1][0]);
+  printf("%d\n", argc);
   exit(EXIT_SUCCESS);
 }
