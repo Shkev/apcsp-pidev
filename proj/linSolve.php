@@ -15,7 +15,7 @@
 
     <?php
        // define variables and set to empty values
-       $arg1 = $arg2 = $arg3 = $arg4 = $arg5 = $arg6 = $arg7 = $arg8 = $arg9 = $arg10 = $arg11 = $arg12 = $output = $retc = "";
+       $arg1 = $arg2 = $arg3 = $arg4 = $arg5 = $arg6 = $arg7 = $arg8 = $arg9 = $output = $retc = "";
 
        if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $arg1 = test_input($_POST["arg1"]);
@@ -27,10 +27,7 @@
          $arg7 = test_input($_POST["arg7"]);
          $arg8 = test_input($_POST["arg8"]);
          $arg9 = test_input($_POST["arg9"]);
-         $arg10 = test_input($_POST["arg10"]);
-         $arg11 = test_input($_POST["arg11"]);
-         $arg12 = test_input($_POST["arg12"]);
-       exec("/usr/lib/cgi-bin/sp1b/linSolveMain " . $arg1 . " " . $arg2 . " " . $arg3 . " " . $arg4 . " " . $arg5 . " " . $arg6 . " " . $arg7 . " " . $arg7 . " " . $arg8 . " " . $arg9 . " " . $arg10 . " " . $arg11 . " " . $arg12, $output, $retc);
+       exec("/usr/lib/cgi-bin/sp1b/linSolve " . $arg1 . " " . $arg2 . " " . $arg3 . " " . $arg4 . " " . $arg5 . " " . $arg6 . " " . $arg7 . " " . $arg7 . " " . $arg8 . " " . $arg9, $output, $retc);
        }
 
        function test_input($data) {
@@ -42,14 +39,10 @@
     ?>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-
-      Equation 1: <input type="text" name="arg1"><i>x<sub>1</sub></i> <input type="text" name="arg2"><i>x<sub>2</sub></i> <input type="text" name="arg3"><i>x<sub>3</sub </i> <input type="text" name="arg4"><i>x<sub>4</sub></i>
-      <p> </p>Equation 2: <input type="text" name="arg5"><i>x<sub>1</sub></i> <input type="text" name="arg6"><i>x<sub>2</sub></i> <input type="text" name="arg7"><i>x<sub>3</sub></i> <input type="text" name="arg8"><i>x<sub>4</sub></i>
-      <p> </p>Equation 3: <input type="text" name="arg9"><i>x<sub>1</sub></i> <input type="text" name="arg10"><i>x<sub>2</sub></i> <input type="text" name="arg11"><i>x<sub>3</sub></i> <input type="text" name="arg12"><i>x<sub>4</sub></i>
-
-      Equation 1: <input type="text" name="arg1" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg2" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg3" value="0"><i>x<sub>3</sub></i><input type="text" name="arg4" value="0"><i>x<sub>4</sub></i>
-      <p> </p>Equation 2: <input type="text" name="arg5" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg6" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg7" value="0"><i>x<sub>3</sub></i> <input type="text" name="arg8" value "0"><i>x<sub>4</sub></i>
-      <p> </p>Equation 3: <input type="text" name="arg9" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg10" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg11" value="0"><i>x<sub>3</sub></i> <input type="text" name="arg12" value="0"><i>x<sub>4</sub></i>
+      
+      Equation 1: <input type="text" name="arg1" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg2" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg3" value="0"><i>x<sub>3</sub></i>
+      <p> </p>Equation 2: <input type="text" name="arg4" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg5" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg6" value="0"><i>x<sub>3</sub></i>
+      <p> </p>Equation 3: <input type="text" name="arg7" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg8" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg9" value="0"><i>x<sub>3</sub></i>
       <br>
       <input type="submit" value="Go!">
     </form>
