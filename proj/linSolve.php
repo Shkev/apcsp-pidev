@@ -15,7 +15,7 @@
 
     <?php
        // define variables and set to empty values
-       $arg1 = $arg2 = $arg3 = $arg4 = $arg5 = $arg6 = $arg7 = $arg8 = $arg9 = $output = $retc = "";
+       $arg1 = $arg2 = $arg3 = $arg4 = $arg5 = $arg6 = $arg7 = $arg8 = $arg9 = $arg10 = $arg11 = $arg12 = $output = $retc = "";
 
        if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $arg1 = test_input($_POST["arg1"]);
@@ -51,16 +51,11 @@
     </form>
 
     <?php
-       // only display if return code is numeric - i.e. exec has been called
        if (is_numeric($retc)) {
-         echo "<h2>Your Input:</h2>";
-         echo $arg1;
-         echo "<br>";
-         echo $arg2;
-         echo "<br>";
-
-         echo "<h2>Program Output (an array):</h2>";
-         foreach ($output as $line) {
+           echo "<h2>Program Input<h2>";
+           echo $arg1;
+           echo "<h2>Program Output (an array):</h2>";
+           foreach ($output as $line) {
            echo $line;
            echo "<br>";
          }

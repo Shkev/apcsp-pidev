@@ -17,6 +17,7 @@ int main(int argc, char* argv[])
   int n = 0;
   int m = 0;
   int k = 1;
+  //int j = 0;
   int r0, r1, r2, c0, c1, c2;
   r0 = TRUE; r1 = TRUE; r2 = TRUE;
   c0 = TRUE; c1 = TRUE; c2 = TRUE;
@@ -39,12 +40,15 @@ int main(int argc, char* argv[])
         i++;
         k = 0;
         equalsMatrix[m][0] = atof(argv[i]);
+	//j++;
       }
     }
     n++;
     k++;
   }
-  printf("%f", inputMatrix[1][2]);
+  printf("%f %f %f\n", inputMatrix[0][0], inputMatrix[0][1], inputMatrix[0][2]);
+  printf("%f %f %f\n", inputMatrix[1][0], inputMatrix[1][1], inputMatrix[1][2]);
+  printf("%f %f %f\n", inputMatrix[2][0], inputMatrix[2][1], inputMatrix[2][2]);
   rmExtra(inputMatrix, &r0, &r1, &r2, &c0, &c1, &c2);
   invMatrix(inputMatrix, inverseMatrix, &r0, &r1, &r2, &c0, &c1, &c2);
   printf("%d%d%d%d%d%d\n", r0, r1, r2, c0, c1, c2);
