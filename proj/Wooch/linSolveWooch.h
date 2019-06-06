@@ -1,4 +1,4 @@
 //declaring fuctions
+void printSolutions();
 
-void multMatrix();
-
+void multMat();

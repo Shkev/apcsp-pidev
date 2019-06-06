@@ -4,21 +4,21 @@
 #define MAXROW      4
 #define MAXCOL      4
 
-/* not currently necessary
-void printMatrix(int m[][MAXCOL],int row,int col)
+void printSolutions(int m[][], int row, int col)
 {
-  int a,b;
-  for(a = 0; a < row; a++)
+  int i = 1
+  for(int a = 0; a < row; a++)
   {
-    for(b = 0; b < col; b++)
+    for(int b = 0; b < col; b++)
     {
-      printf("%d\t",m[a][b]);
+      printf("x%d = %d\t", i, m[a][b]);
     }
-      printf("\n");
-    }
-}*/
+    printf("\n");
+    i++;
+  }
+}
 
-int multMat(float* x[][], float* y[][], float* result[][], int m1, int n1, int m2, int n2)
+void multMat(float* x[][], float* y[][], float* result[][], int m1, int n1, int m2, int n2)
 {
   int total;
   if(m1 == n2)
@@ -36,7 +36,6 @@ int multMat(float* x[][], float* y[][], float* result[][], int m1, int n1, int m
   }
   else
   {
-    printf("\nMultiplication can not be done.");
+    printf("\nMultiplication can not be done.\n");
   }
-  exit(EXIT_SUCCESS);
 }
