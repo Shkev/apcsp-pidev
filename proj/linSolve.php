@@ -52,8 +52,6 @@
 
     <?php
        if (is_numeric($retc)) {
-           echo "<h2>Program Input<h2>";
-           echo $arg1;
            echo "<h2>Program Output (an array):</h2>";
            foreach ($output as $line) {
            echo $line;
