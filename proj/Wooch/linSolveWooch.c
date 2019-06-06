@@ -21,7 +21,7 @@ void printSolutions(int row, int col, float m[row][col])
 void multMat(float* x[MAXROW][MAXCOL], float* y[MAXROW][MAXCOL], float* result[MAXROW][MAXCOL], int m1, int n1, int m2, int n2)
 {
   int total;
-  if(m1 == n2)
+  if(n1 == m2)
   {
     /*Multiplying two matrices*/
     for(int a = 0; a < m1; a++)

@@ -7,7 +7,7 @@
 #define TRUE   1
 
 //defining functions
-void rmExtra(float matrix[MAXROW][MAXCOL], int* r0, int* r1, int* r2, int* c0, int* c1, int* c2)
+void rmExtra(float matrix[][MAXCOL], int* r0, int* r1, int* r2, int* c0, int* c1, int* c2)
 {
   for (int i = 0; i < MAXROW; i++)
   {
@@ -60,7 +60,7 @@ void scaleMatrix(int max, float* inputMatrix[max][max], float* outputMatrix[max]
   }
 } */
 
-void invMatrix(float matrix[MAXROW][MAXCOL], float outputMatrix[MAXROW][MAXCOL], int* r0, int* r1, int* r2, int* c0, int* c1, int* c2)
+void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, int* r1, int* r2, int* c0, int* c1, int* c2)
 {
   float deter;
   if ((*c2 == FALSE) & (*r2 == FALSE))

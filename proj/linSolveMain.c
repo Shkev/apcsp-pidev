@@ -44,13 +44,23 @@ int main(int argc, char* argv[])
     n++;
     k++;
   }
-
+  printf("%f", inputMatrix[1][2]);
   rmExtra(inputMatrix, &r0, &r1, &r2, &c0, &c1, &c2);
   invMatrix(inputMatrix, inverseMatrix, &r0, &r1, &r2, &c0, &c1, &c2);
+  printf("%d%d%d%d%d%d\n", r0, r1, r2, c0, c1, c2);
+  printf("%f\n%f\n%f\n", equalsMatrix[0][0], equalsMatrix[1][0], equalsMatrix[2][0]);
   //Multiplying equalsMatrix by inverseMatrix to get outputMatrix of solutions (inverseMatrix must be entered as first arg).
   int m1, n1, m2, n2;
-  m2 = MAXROW;
+  if (equalsMatrix[MAXROW][0] != 0)
+  {
+    m2 = MAXROW;
+  }
+  if ((equalsMatrix[MAXROW][0] == 0) & (equalsMatrix[2][0] != 0))
+  {
+    m2 = 2;
+  }
   n2 = 1;
+
   if (r2 == FALSE)
   {
     m1 = 2;
@@ -59,13 +69,20 @@ int main(int argc, char* argv[])
   {
     n1 = 2;
   }
-  if ((c2 == TRUE) & (r2 == TRUE))
+  if (c2 == TRUE)
   {
-    m1 = MAXROW;
     n1 = MAXCOL;
+  }
+  if (r2 == TRUE)
+  {
+     m1 = MAXROW;
   }
 
   multMat(inverseMatrix, equalsMatrix, outputMatrix, m1, n1, m2, n2); //outputMatrix is m1 by n2 array
   printSolutions(m1, n2, outputMatrix);
   exit(EXIT_SUCCESS);
-}
+ }
+
+
+
+
