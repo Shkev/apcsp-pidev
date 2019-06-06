@@ -34,7 +34,7 @@
          $arg14 = test_input($_POST["arg14"]);
          $arg15 = test_input($_POST["arg15"]);
          $arg16 = test_input($_POST["arg16"]);
-       exec("/usr/lib/cgi-bin/sp1b/linSolveMain " . $arg1 . " " . $arg2 . " " . $arg3 . " " . $arg4 . " " . $arg5 . " " . $arg6 . " " . $arg7 . " " . $arg7 . " " . $arg8 . " " . $arg9 . " " . $arg10 . " " . $arg11 . " " . $arg12 . " " . $arg13 . " " . $arg14 . " " . $arg15 . " " . $arg16, $output, $retc); 
+       exec("/usr/lib/cgi-bin/sp1b/linSolveMain " . $arg1 . " " . $arg2 . " " . $arg3 . " " . $arg4 . " " . $arg5 . " " . $arg6 . " " . $arg7 . " " . $arg7 . " " . $arg8 . " " . $arg9 . " " . $arg10 . " " . $arg11 . " " . $arg12 . " " . $arg13 . " " . $arg14 . " " . $arg15 . " " . $arg16, $output, $retc);
        }
 
        function test_input($data) {
@@ -46,15 +46,16 @@
     ?>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<<<<<<< HEAD
+
       Equation 1: <input type="text" name="arg1"><i>x<sub>1</sub></i> <input type="text" name="arg2"><i>x<sub>2</sub></i> <input type="text" name="arg3"><i>x<sub>3</sub </i> <input type="text" name="arg4"><i>x<sub>4</sub></i>
-      <p> </p>Equation 2: <input type="text" name="arg5"><i>x<sub>1</sub></i> <input type="text" name="arg6"><i>x<sub>2</sub></i> <input type="text" name="arg7"><i>x<sub>3</sub></i> <input type="text" name="arg8"><i>x<sub>4</sub></i>		      <p> </p>Equation 3: <input type="text" name="arg9"><i>x<sub>1</sub></i> <input type="text" name="arg10"><i>x<sub>2</sub></i> <input type="text" name="arg11"><i>x<sub>3</sub></i> <input type="text" name="arg12"><i>x<sub>4</sub></i>
-      <p> </p>Equation 4: <input type="text" name="arg13"><i>x<sub>1</sub></i> <input type="text" name="arg14"><i>x<sub>2</sub></i> <input type="text" name="arg15"><i>x<sub>3</sub></i> <input type="text" name="arg16"><i>x<sub>4</sub></i>																					     
-=======
-      Equation 1: <input type="text" name="arg1" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg2" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg3" value="0"><i>x<sub>3</sub </i> <input type="text" name="arg4" value="0"><i>x<sub>4</sub></i>
-      <p> </p>Equation 2: <input type="text" name="arg5" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg6" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg7" value="0"><i>x<sub>3</sub></i> <input type="text" name="arg8" value "0"><i>x<sub>4</sub></i>											                        <p> </p>Equation 3: <input type="text" name="arg9" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg10" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg11" value="0"><i>x<sub>3</sub></i> <input type="text" name="arg12" value="0"><i>x<sub>4</sub></i>
-      <p> </p>Equation 4: <input type="text" name="arg13" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg14" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg15" value="0"><i>x<sub>3</sub></i> <input type="text" name="arg16" value="0"><i>x<sub>4</sub></i>																					     
->>>>>>> b7393605e92734138da1d239c2c5d36efa606aa2
+      <p> </p>Equation 2: <input type="text" name="arg5"><i>x<sub>1</sub></i> <input type="text" name="arg6"><i>x<sub>2</sub></i> <input type="text" name="arg7"><i>x<sub>3</sub></i> <input type="text" name="arg8"><i>x<sub>4</sub></i>
+      <p> </p>Equation 3: <input type="text" name="arg9"><i>x<sub>1</sub></i> <input type="text" name="arg10"><i>x<sub>2</sub></i> <input type="text" name="arg11"><i>x<sub>3</sub></i> <input type="text" name="arg12"><i>x<sub>4</sub></i>
+      <p> </p>Equation 4: <input type="text" name="arg13"><i>x<sub>1</sub></i> <input type="text" name="arg14"><i>x<sub>2</sub></i> <input type="text" name="arg15"><i>x<sub>3</sub></i> <input type="text" name="arg16"><i>x<sub>4</sub></i>
+
+      Equation 1: <input type="text" name="arg1" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg2" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg3" value="0"><i>x<sub>3</sub></i><input type="text" name="arg4" value="0"><i>x<sub>4</sub></i>
+      <p> </p>Equation 2: <input type="text" name="arg5" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg6" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg7" value="0"><i>x<sub>3</sub></i> <input type="text" name="arg8" value "0"><i>x<sub>4</sub></i>
+      <p> </p>Equation 3: <input type="text" name="arg9" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg10" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg11" value="0"><i>x<sub>3</sub></i> <input type="text" name="arg12" value="0"><i>x<sub>4</sub></i>
+      <p> </p>Equation 4: <input type="text" name="arg13" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg14" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg15" value="0"><i>x<sub>3</sub></i> <input type="text" name="arg16" value="0"><i>x<sub>4</sub></i>
       <br>
       <input type="submit" value="Go!">
     </form>
@@ -67,7 +68,7 @@
          echo "<br>";
          echo $arg2;
          echo "<br>";
-       
+
          echo "<h2>Program Output (an array):</h2>";
          foreach ($output as $line) {
            echo $line;
@@ -78,6 +79,6 @@
          echo $retc;
        }
     ?>
-    
+
   </body>
 </html>
