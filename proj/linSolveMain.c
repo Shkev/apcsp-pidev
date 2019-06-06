@@ -17,7 +17,6 @@ int main(int argc, char* argv[])
   int n = 0;
   int m = 0;
   int k = 1;
-  //int j = 0;
   int r0, r1, r2, c0, c1, c2;
   r0 = TRUE; r1 = TRUE; r2 = TRUE;
   c0 = TRUE; c1 = TRUE; c2 = TRUE;
@@ -38,9 +37,12 @@ int main(int argc, char* argv[])
       if ((k % MAXROW) == 0)
       {
         i++;
-        k = 0;
+        k = 1;
+	if ((m == 1) & (n == 3))
+	{
+	  k = 0;
+	}    
         equalsMatrix[m][0] = atof(argv[i]);
-	//j++;
       }
     }
     n++;
