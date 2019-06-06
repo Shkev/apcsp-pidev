@@ -70,7 +70,7 @@ void scaleMatrix(float* inputMatrix[][], float* outputMatrix, float scalar, int 
   }
 }
 
-void invMatrix(float matrix[][],int* r1, int* r2, int* r3, int* r4, int* c1, int* c2, int* c3, int* c4 )
+void invMatrix(float* matrix[][], float* outputMatrix[][], int* r1, int* r2, int* r3, int* r4, int* c1, int* c2, int* c3, int* c4)
 {
   float deter;
   if ((*c3 == FALSE) & (*c2 == FALSE) & (*r3 == FALSE) & (*r2 == FALSE))
@@ -94,6 +94,7 @@ void invMatrix(float matrix[][],int* r1, int* r2, int* r3, int* r4, int* c1, int
       adj[2][1] = c * (-1);
       adj[2][2] = a;
       scaleMatrix(adj, invMat, (1 / deter), 2);
+      scaleMatrix(invMat, outputMatrix, 1, 2); //using function to copy invMat into outputMatrix
       /*for (int m = 0; m < 2; m++)
       {
         for (int n = 0; n < 2; n++)
@@ -158,6 +159,7 @@ void invMatrix(float matrix[][],int* r1, int* r2, int* r3, int* r4, int* c1, int
       else
       {
         scaleMatrix(adj, invMat, (1 / deter), 3);
+        scaleMatrix(invMat, outputMatrix, 1, 3); //using function to copy invMat into outputMatrix
         /*for (int m = 0; m < 3; m++)
         {
           for (int n = 0; n < 3; n++)
