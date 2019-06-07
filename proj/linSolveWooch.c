@@ -18,26 +18,20 @@ void printSolutions(int row, int col, float m[row][col])
     }
 }
 
-void multMat(float x[][MAXCOL], float y[][MAXCOL], float result[][MAXCOL], int m1, int n1, int m2, int n2)
+void multMat(float x[][MAXCOL], float y[][MAXCOL], float result[][MAXCOL], int r, int s, int t)
 {
   int total;
-  if(n1 == m2)
-  {
     /*Multiplying two matrices*/
-    for(int a = 0; a < m1; a++)
-	  {
-      total = 0;
-	    for(int b = 0; b < n1; b++)
-	    {
-	      float arg1 = x[a][b];
-	      float arg2 = y[b][a];
-	      total = total + (arg1 * arg2);
-	      result[a][b] = total;
-	    }
-	  }
-  }
-  else
+    for(r=0; r<3; r++)
     {
-      printf("\nMultiplication can not be done.\n");
+      for(s=0; s<3; s++)
+      {
+	total=0;
+        for(t=0; t<3; t++)
+        {
+          total = total + x[r][t] * y[t][s];
+        }
+        result[r][s] = total;
+      }
     }
 }
