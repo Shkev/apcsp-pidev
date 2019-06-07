@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
     {
       m1 = MAXROW;
     }
-    multMat(inverseMatrix, equalsMatrix, outputMatrix, m1, n1, m2, n2); //outputMatrix is m1 by n2 array
+    multMat(m1, n1, m2, n2, inverseMatrix, equalsMatrix, outputMatrix); //outputMatrix is m1 by n2 array
     printSolutions(m1, n2, outputMatrix);
     exit(EXIT_SUCCESS);
   }
