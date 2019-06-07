@@ -1,4 +1,5 @@
-//declaring fuctions
-void printSolutions();
+//declaring functions
 
-void multMat();
+void rmExtra();
+
+void invMatrix();

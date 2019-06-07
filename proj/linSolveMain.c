@@ -48,42 +48,48 @@ int main(int argc, char* argv[])
     n++;
     k++;
   }
-  printf("%f %f %f\n", inputMatrix[0][0], inputMatrix[0][1], inputMatrix[0][2]);
-  printf("%f %f %f\n", inputMatrix[1][0], inputMatrix[1][1], inputMatrix[1][2]);
-  printf("%f %f %f\n", inputMatrix[2][0], inputMatrix[2][1], inputMatrix[2][2]);
-  printf("\n%f\n%f\n%f\n", equalsMatrix[0][0], equalsMatrix[1][0], equalsMatrix[2][0]);
-  /*rmExtra(inputMatrix, &r0, &r1, &r2, &c0, &c1, &c2);
-  invMatrix(inputMatrix, inverseMatrix, &r0, &r1, &r2, &c0, &c1, &c2);
-  printf("%d%d%d%d%d%d\n", r0, r1, r2, c0, c1, c2);
-  //Multiplying equalsMatrix by inverseMatrix to get outputMatrix of solutions (inverseMatrix must be entered as first arg).
-  int m1, n1, m2, n2;
-  if (equalsMatrix[2][0] != 0)
+  printf("%f %f %f %f\n", inputMatrix[0][0], inputMatrix[0][1], inputMatrix[0][2], equalsMatrix[0][0]);
+  printf("%f %f %f %f\n", inputMatrix[1][0], inputMatrix[1][1], inputMatrix[1][2], equalsMatrix[1][0]);
+  printf("%f %f %f %f\n", inputMatrix[2][0], inputMatrix[2][1], inputMatrix[2][2], equalsMatrix[2][0]);
+  rmExtra(inputMatrix, &r0, &r1, &r2, &c0, &c1, &c2);
+  int cont = TRUE;
+  invMatrix(inputMatrix, inverseMatrix, &r0, &r1, &r2, &c0, &c1, &c2, &cont);
+  if (cont == TRUE)
   {
-    m2 = MAXROW;
+    /* Debugging code
+    printf("%f %f %f\n", inverseMatrix[0][0], inverseMatrix[0][1], inverseMatrix[0][2]);
+    printf("%f %f %f\n", inverseMatrix[1][0], inverseMatrix[1][1], inverseMatrix[1][2]);
+    printf("%f %f %f\n", inverseMatrix[2][0], inverseMatrix[2][1], inverseMatrix[2][2]);
+    printf("%d%d%d%d%d%d\n", r0, r1, r2, c0, c1, c2); */
+    //Multiplying equalsMatrix by inverseMatrix to get outputMatrix of solutions (inverseMatrix must be entered as first arg).
+    int m1, n1, m2, n2;
+    if (equalsMatrix[2][0] != 0)
+    {
+      m2 = MAXROW;
+    }
+    if ((equalsMatrix[2][0] == 0) & (equalsMatrix[1][0] != 0))
+    {
+      m2 = 2;
+    }
+    n2 = 1;
+    if (r2 == FALSE)
+    {
+      m1 = 2;
+    }
+    if (c2 == FALSE)
+    {
+      n1 = 2;
+    }
+    if (c2 == TRUE)
+    {
+      n1 = MAXCOL;
+    }
+    if (r2 == TRUE)
+    {
+      m1 = MAXROW;
+    }
+    multMat(inverseMatrix, equalsMatrix, outputMatrix, m1, n1, m2, n2); //outputMatrix is m1 by n2 array
+    printSolutions(m1, n2, outputMatrix);
+    exit(EXIT_SUCCESS);
   }
-  if ((equalsMatrix[2][0] == 0) & (equalsMatrix[1][0] != 0))
-  {
-    m2 = 2;
-  }
-  n2 = 1;
-  if (r2 == FALSE)
-  {
-    m1 = 2;
-  }
-  if (c2 == FALSE)
-  {
-    n1 = 2;
-  }
-  if (c2 == TRUE)
-  {
-    n1 = MAXCOL;
-  }
-  if (r2 == TRUE)
-  {
-    m1 = MAXROW;
-  }
-
-  multMat(inverseMatrix, equalsMatrix, outputMatrix, m1, n1, m2, n2); //outputMatrix is m1 by n2 array
-  printSolutions(m1, n2, outputMatrix);
-  exit(EXIT_SUCCESS);*/
- }
+}

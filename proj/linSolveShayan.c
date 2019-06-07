@@ -47,20 +47,20 @@ void rmExtra(float matrix[][MAXCOL], int* r0, int* r1, int* r2, int* c0, int* c1
   }
 }
 
-/* not functioning correctly -- not being used
-void scaleMatrix(int max, float* inputMatrix[max][max], float* outputMatrix[max][max], float scalar)
+// not functioning correctly -- not being used
+void scaleMatrix(int max, float inputMatrix[][max], float outputMatrix[][max], float scalar)
 {
   for (int m = 0; m < max; m++)
   {
     for (int n = 0; n < max; n++)
     {
-      float k = *inputMatrix[m][n];
+      float k = inputMatrix[m][n];
       outputMatrix[m][n] = k * scalar;
     }
   }
-} */
+}
 
-void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, int* r1, int* r2, int* c0, int* c1, int* c2)
+void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, int* r1, int* r2, int* c0, int* c1, int* c2, int* cont)
 {
   float deter;
   if ((*c2 == FALSE) & (*r2 == FALSE))
@@ -72,7 +72,8 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
     float b = matrix[0][1];
     float c = matrix[1][0];
     float d = matrix[1][1];
-    deter = (a * d) -  (b * c);
+    deter = (a * d) - (b * c);
+    //printf("\nDeterminant: %f\n", deter);
     if (deter == 0)
     {
       printf("\nInfinite Solutions or No Solutions\n");
@@ -83,24 +84,17 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
       adj[0][1] = b * (-1);
       adj[1][0] = c * (-1);
       adj[1][1] = a;
-      //scaleMatrix(2, adj, invMat, (1 / deter));
-      //scaleMatrix(2, invMat, outputMatrix, 1); //using function to copy invMat into outputMatrix
-      for (int m = 0; m < 2; m++)
-      {
-        for (int n = 0; n < 2; n++)
-        {
-          invMat[m][n] = adj[m][n] * (1 / deter);
-        }
-      }
-      //using loop to copy invMat into outputMatrix
+      scaleMatrix(2, adj, invMat, (1 / deter));
       for (int m = 0; m < 2; m++)
       {
         for (int n = 0; n < 2; n++)
         {
           float arg = invMat[m][n];
-          outputMatrix[m][n] = arg * (1 / deter);
+          outputMatrix[m][n] = arg;
         }
       }
+      //printf("%f %f \n", outputMatrix[0][0], outputMatrix[0][1]);
+      //printf("%f %f \n", outputMatrix[1][0], outputMatrix[1][1]);
     }
   }
   else
@@ -151,28 +145,32 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
       adj[2][1] = matCoFact[1][2];
       adj[2][2] = matCoFact[2][2];
       deter = (matCoFact[0][0] * a) + (matCoFact[0][1] * b) + (matCoFact[0][2] * c);
+      printf("%f\n", deter);
       if (deter == 0)
       {
         printf("Infinite Solutions or No Solutions\n");
+        *cont = FALSE;
       }
       else
       {
-        for (int m = 0; m < 3; m++)
+        scaleMatrix(2, adj, invMat, (1 / deter));
+        scaleMatrix(2, invMat, outputMatrix, 1); //using function to copy invMat into outputMatrix
+        /*for (int m = 0; m < 3; m++)
         {
           for (int n = 0; n < 3; n++)
           {
             invMat[m][n] = adj[m][n] * (1 / deter);
           }
-        }
+        }*/
         //using loop to copy invMat into outputMatrix
-        for (int m = 0; m < 3; m++)
+        /*for (int m = 0; m < 3; m++)
         {
           for (int n = 0; n < 3; n++)
           {
             float arg = invMat[m][n];
             outputMatrix[m][n] = arg * (1 / deter);
           }
-        }
+        }*/
       }
     }
     /*else
