@@ -47,7 +47,6 @@ void rmExtra(float matrix[][MAXCOL], int* r0, int* r1, int* r2, int* c0, int* c1
   }
 }
 
-// not functioning correctly -- not being used
 void scaleMatrix(int max, float inputMatrix[][max], float outputMatrix[][max], float scalar)
 {
   for (int m = 0; m < max; m++)
@@ -110,30 +109,41 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
       d = matrix[1][0]; e = matrix[1][1]; f = matrix[1][2];
       g = matrix[2][0]; h = matrix[2][1]; i = matrix[2][2];
       //creating matrix of minors
-      matMinor[0][0] = (e * i) - (f * g);
-      matMinor[0][1] = (d * i) - (h * f);
-      matMinor[0][2] = (d * g) - (h * e);
-      matMinor[1][0] = (b * i) - (g * c);
-      matMinor[1][1] = (a * i) - (h * c);
-      matMinor[1][2] = (a * g) - (b * h);
+      matMinor[0][0] = (e * i) - (f * h);
+      matMinor[0][1] = (d * i) - (g * f);
+      matMinor[0][2] = (d * h) - (g * e);
+      matMinor[1][0] = (b * i) - (h * c);
+      matMinor[1][1] = (a * i) - (g * c);
+      matMinor[1][2] = (a * h) - (b * g);
       matMinor[2][0] = (b * f) - (e * c);
       matMinor[2][1] = (a * f) - (d * c);
       matMinor[2][2] = (a * e) - (b * d);
+      /* Debugging code
+      printf("\nMatrix of Minors\n");
+      printf("%f %f %f\n", matMinor[0][0], matMinor[0][1], matMinor[0][2]);
+      printf("%f %f %f\n", matMinor[1][0], matMinor[1][1], matMinor[1][2]);
+      printf("%f %f %f\n", matMinor[2][0], matMinor[2][1], matMinor[2][2]); */
       float matCoFact[3][3];
-      int m = 0; int n = 0;
-      for (int i = 0; i < 9; i++)
+      for (int m = 0; m < MAXROW; m++)
       {
-        if ((i % 2) == 0)
-        {
-          matCoFact[m][n] = matMinor[m][n];
-        }
-        else
-        {
-          matCoFact[m][n] = matMinor[m][n] * (-1);
-        }
-        m++;
-        n++;
+	for (int n = 0; n < MAXCOL; n++)
+	{
+          if ((n % 2) == 0)
+          {
+            matCoFact[m][n] = matMinor[m][n];
+          }
+          else
+          {
+            float val = matMinor[m][n];
+            matCoFact[m][n] = -1 * val;
+          }
+	}
       }
+      /* Debugging Code
+      printf("\nMatrix of Cofactors\n");
+      printf("%f %f %f\n", matCoFact[0][0], matCoFact[0][1], matCoFact[0][2]);
+      printf("%f %f %f\n", matCoFact[1][0], matCoFact[1][1], matCoFact[1][2]);
+      printf("%f %f %f\n", matCoFact[2][0], matCoFact[2][1], matCoFact[2][2]); */
       //code to transpose matrix of cofactors to adjugate
       adj[0][0] = matCoFact[0][0];
       adj[0][1] = matCoFact[1][0];
@@ -145,7 +155,7 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
       adj[2][1] = matCoFact[1][2];
       adj[2][2] = matCoFact[2][2];
       deter = (matCoFact[0][0] * a) + (matCoFact[0][1] * b) + (matCoFact[0][2] * c);
-      printf("%f\n", deter);
+      //printf("Determinant: %f\n", deter);
       if (deter == 0)
       {
         printf("Infinite Solutions or No Solutions\n");
@@ -153,24 +163,21 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
       }
       else
       {
-        scaleMatrix(2, adj, invMat, (1 / deter));
-        scaleMatrix(2, invMat, outputMatrix, 1); //using function to copy invMat into outputMatrix
-        /*for (int m = 0; m < 3; m++)
-        {
-          for (int n = 0; n < 3; n++)
-          {
-            invMat[m][n] = adj[m][n] * (1 / deter);
-          }
-        }*/
+        scaleMatrix(3, adj, invMat, (1 / deter));
+        /* Debugging code
+	printf("\nInverse Matrix\n");
+        printf("%f %f %f\n", invMat[0][0], invMat[0][1], invMat[0][2]);
+        printf("%f %f %f\n", invMat[1][0], invMat[1][1], invMat[1][2]);
+        printf("%f %f %f\n", invMat[2][0], invMat[2][1], invMat[2][2]); */
         //using loop to copy invMat into outputMatrix
-        /*for (int m = 0; m < 3; m++)
+        for (int m = 0; m < 3; m++)
         {
           for (int n = 0; n < 3; n++)
           {
             float arg = invMat[m][n];
-            outputMatrix[m][n] = arg * (1 / deter);
+            outputMatrix[m][n] = arg;
           }
-        }*/
+        }
       }
     }
     /*else

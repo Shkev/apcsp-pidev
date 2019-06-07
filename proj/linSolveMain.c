@@ -48,6 +48,7 @@ int main(int argc, char* argv[])
     n++;
     k++;
   }
+  printf("\nInput\n");
   printf("%f %f %f %f\n", inputMatrix[0][0], inputMatrix[0][1], inputMatrix[0][2], equalsMatrix[0][0]);
   printf("%f %f %f %f\n", inputMatrix[1][0], inputMatrix[1][1], inputMatrix[1][2], equalsMatrix[1][0]);
   printf("%f %f %f %f\n", inputMatrix[2][0], inputMatrix[2][1], inputMatrix[2][2], equalsMatrix[2][0]);
@@ -57,7 +58,7 @@ int main(int argc, char* argv[])
   if (cont == TRUE)
   {
     /* Debugging code
-    printf("%f %f %f\n", inverseMatrix[0][0], inverseMatrix[0][1], inverseMatrix[0][2]);
+    printf("\n%f %f %f\n", inverseMatrix[0][0], inverseMatrix[0][1], inverseMatrix[0][2]);
     printf("%f %f %f\n", inverseMatrix[1][0], inverseMatrix[1][1], inverseMatrix[1][2]);
     printf("%f %f %f\n", inverseMatrix[2][0], inverseMatrix[2][1], inverseMatrix[2][2]);
     printf("%d%d%d%d%d%d\n", r0, r1, r2, c0, c1, c2); */
