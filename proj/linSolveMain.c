@@ -89,9 +89,6 @@ int main(int argc, char* argv[])
     {
       m1 = MAXROW;
     }
-    printf("\nequal matrix\n");
-    printf("%f\n", equalsMatrix[0][0]);
-    printf("%f\n", equalsMatrix[1][0]);
     //printf("%f\n", equalsMatrix[2][0]); 
     multMat(m1, n1, m2, n2, inverseMatrix, equalsMatrix, outputMatrix); //outputMatrix is m1 by equalsMatrix n2 arraequalsMatrix
     printSolutions(m1, n2, outputMatrix);
