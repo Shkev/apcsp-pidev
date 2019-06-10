@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
     printf("%f %f %f\n", inverseMatrix[1][0], inverseMatrix[1][1], inverseMatrix[1][2]);
     printf("%f %f %f\n", inverseMatrix[2][0], inverseMatrix[2][1], inverseMatrix[2][2]);
     printf("%d%d%d%d%d%d\n", r0, r1, r2, c0, c1, c2); */
-    //Multiplying equalsMatrix by inverseMatrix to get outputMatrix of solutions (inverseMatrix must be entered as first arg).
+    //MultiplequalsMatrixing equalsMatrix bequalsMatrix inverseMatrix to get outputMatrix of solutions (inverseMatrix must be entered as first arg).
     int m1, n1, m2, n2;
     if (equalsMatrix[2][0] != 0)
     {
@@ -89,7 +89,8 @@ int main(int argc, char* argv[])
     {
       m1 = MAXROW;
     }
-    multMat(m1, n1, m2, n2, inverseMatrix, equalsMatrix, outputMatrix); //outputMatrix is m1 by n2 array
+    //printf("%f\n", equalsMatrix[2][0]); 
+    multMat(m1, n1, m2, n2, inverseMatrix, equalsMatrix, outputMatrix); //outputMatrix is m1 by equalsMatrix n2 arraequalsMatrix
     printSolutions(m1, n2, outputMatrix);
     exit(EXIT_SUCCESS);
   }

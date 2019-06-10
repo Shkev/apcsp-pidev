@@ -175,7 +175,7 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
           for (int n = 0; n < 3; n++)
           {
             float arg = invMat[m][n];
-            outputMatrix[m][n] = arg;
+           outputMatrix[m][n] = arg;
           }
         }
       }

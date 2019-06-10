@@ -19,8 +19,13 @@ void printSolutions(int row, int col, float m[row][col])
     }
 }
 
-void multMat(int m1, int n1, int m2, int n2, float x[][MAXCOL], float y[][MAXCOL], float result[n1][m2])
+void multMat(int m1, int n1, int m2, int n2, float x[MAXROW][MAXCOL], float y[n1][n2], float result[n1][m2])
 {
+  /* debugging code
+  printf("\ny matrix\n");
+  printf("%f\n", y[0][0]);
+  printf("%f\n", y[1][0]);
+  printf("%f\n", y[2][0]); */
   float total;
   /*Multiplying two matrices*/
   for(int r = 0; r < n2; r++)
@@ -28,10 +33,9 @@ void multMat(int m1, int n1, int m2, int n2, float x[][MAXCOL], float y[][MAXCOL
     for(int s = 0; s < m1; s++)
     {
       total = 0;
-      for(int t = 0; t < n1; t++)
+      for(int t = 0; t < m2; t++)
       {
-        total = total + x[s][t] * y[t][r];
-        printf("%f", total);
+        total += x[s][t] * y[t][r];
       }
       result[r][s] = total;
     }
