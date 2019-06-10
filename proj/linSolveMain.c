@@ -10,9 +10,9 @@
 /* Start of main code */
 int main(int argc, char* argv[])
 {
-  float inputMatrix[MAXROW][MAXCOL];
+  float inputMatrix[MAXROW][MAXCOL] = { {0, 0, 0}, {0, 0, 0,}, {0, 0, 0} };
   float inverseMatrix[MAXROW][MAXCOL];
-  float equalsMatrix[MAXROW][1];
+  float equalsMatrix[MAXROW][1] = { {0}, {0}, {0} };
   float outputMatrix[MAXROW][MAXCOL];
   int n = 0;
   int m = 0;
