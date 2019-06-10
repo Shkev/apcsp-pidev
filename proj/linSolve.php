@@ -3,15 +3,21 @@
   <head>
     <title>Linear System Solver</title>
     <style>
+      body {
+        background-image: url("koch-snowflake.jpg");
+      }
+      h4 {
+        background-color: "blue"
+      }
       input {
-      width: 5%;
+        width: 5%;
       }
     </style>
   </head>
   <body>
 
-    <h1>Enter Coefficients of Variables to solve Linear System</h1>
-    <h4>By: Shayan Azmoodeh and Woocheol Kim</h4>
+    <h1 style="color:#B22222;">Enter Coefficients of Variables to solve Linear System</h1>
+    <h4 style="color:#F15511;">By: Shayan Azmoodeh and Woocheol Kim</h4>
 
     <?php
        // define variables and set to empty values
@@ -43,9 +49,9 @@
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       
-      Equation 1: <input type="text" name="arg1" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg2" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg3" value="0"><i>x<sub>3</sub></i>&nbsp  =&nbsp  <input type="text" name="arg4" value="0">
-      <p> </p>Equation 2: <input type="text" name="arg5" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg6" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg7" value="0"><i>x<sub>3</sub></i>&nbsp=  &nbsp<input type="text" name="arg8" value="0">
-      <p> </p>Equation 3: <input type="text" name="arg9" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg10" value="0"><i>x<sub>2</sub></i \> <input type="text" name="arg11" Value="0"><i>x<sub>3</sub></i>&nbsp  =&nbsp  <input type="text" name="arg12" value="0">
+     Equation 1:  <input type="text" name="arg1" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg2" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg3" value="0"><i>x<sub>3</sub></i>&nbsp  =&nbsp  <input type="text" name="arg4" value="0">
+      <br><br>Equation 2:   <input type="text" name="arg5" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg6" value="0"><i>x<sub>2</sub></i> <input type="text" name="arg7" value="0"><i>x<sub>3</sub></i>&nbsp=  &nbsp<input type="text" name="arg8" value="0">
+      <br><br>Equation 3:  <input type="text" name="arg9" value="0"><i>x<sub>1</sub></i> <input type="text" name="arg10" value="0"><i>x<sub>2</sub></i \> <input type="text" name="arg11" Value="0"><i>x<sub>3</sub></i>&nbsp  =&nbsp  <input type="text" name="arg12" value="0">
       <br>
       <input type="submit" value="Go!">
     </form>
