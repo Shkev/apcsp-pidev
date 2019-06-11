@@ -30,7 +30,7 @@
          $arg10 = test_input($_POST["arg10"]);
          $arg11 = test_input($_POST["arg11"]);
          $arg12 = test_input($_POST["arg12"]);
-       exec("/usr/lib/cgi-bin/sp1b/php/linSolve " . $arg1 . " " . $arg2 . " " . $arg3 . " " . $arg4 . " " . $arg5 . " " . $arg6 . " " . $arg7 . " " . $arg7 . " " . $arg8 . " " . $arg9 . " " . $arg10 . " " . $arg11 . " " . $arg12, $output, $retc);
+       exec("/Users/shayanazmoodeh/documents/cs/apcsp/C_dev/proj/linSolve " . $arg1 . " " . $arg2 . " " . $arg3 . " " . $arg4 . " " . $arg5 . " " . $arg6 . " " . $arg7 . " " . $arg7 . " " . $arg8 . " " . $arg9 . " " . $arg10 . " " . $arg11 . " " . $arg12, $output, $retc);
        }
 
        function test_input($data) {
