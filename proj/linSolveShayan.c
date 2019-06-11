@@ -124,11 +124,12 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
       printf("%f %f %f\n", matMinor[1][0], matMinor[1][1], matMinor[1][2]);
       printf("%f %f %f\n", matMinor[2][0], matMinor[2][1], matMinor[2][2]); */
       float matCoFact[3][3];
+      int var = 0;
       for (int m = 0; m < MAXROW; m++)
       {
 	for (int n = 0; n < MAXCOL; n++)
 	{
-          if ((n % 2) == 0)
+          if ((var % 2) == 0)
           {
             matCoFact[m][n] = matMinor[m][n];
           }
@@ -137,6 +138,7 @@ void invMatrix(float matrix[][MAXCOL], float outputMatrix[][MAXCOL], int* r0, in
             float val = matMinor[m][n];
             matCoFact[m][n] = -1 * val;
           }
+	  var++;
 	}
       }
       /* Debugging Code
